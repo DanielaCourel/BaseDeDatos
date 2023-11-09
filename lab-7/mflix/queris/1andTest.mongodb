@@ -1,0 +1,53 @@
+//Conect to database
+use('mflix')
+
+db.users.find({"name": "John"}).pretty();
+
+//Insertar 5 nuevos usuarios en la colección users. Para cada nuevo usuario creado, insertar al menos un comentario realizado por el usuario en la colección comments.
+/* 
+use('mflix')
+db.users.insertMany(
+    [
+        {
+            "name": "John",
+            "email": "asldfjlksa@gmail.com",
+            "password": "123456"
+        },
+        {
+            "name": "Poul",
+            "email": "asd@gmail.com",
+            "password": "123456"
+        }
+    ]
+) */
+
+/* 1. Insertar 5 nuevos usuarios en la colección users. Para cada nuevo usuario creado, insertar al menos un comentario realizado por el usuario en la colección 
+comments. */
+/* var users = [
+    {
+        "name": "John",
+        "email": "asldfjlksa@gmail.com",
+        "password": "123456"
+    },
+    {
+        "name": "Poul",
+        "email": "asd@gmail.com",
+        "password": "123456"
+    },
+    {   
+        "name": "Pablo",
+        "email": "sdfasds@gmail.com",
+        "password": "123456"
+
+    },
+    {
+        "name": "Pedro",
+        "email": "sdkajflkej@gmail.com",
+        "password": "123456"
+    },
+    {
+        "name": "Maria",
+        "email": "sdjkflkawenj@mgasj.com",
+        "password": "123456"
+    }
+] */
