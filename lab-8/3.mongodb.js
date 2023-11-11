@@ -2,12 +2,21 @@
 
 use('mflix')
 
-db.theaters
+db.movies.find(
+    {
+        "directors": "Louis Lumière"
+    }
+).count()
 
-db.theaters.aggregate([
+use('mflix')
+
+db.movies.aggregate([
     {
         $match: {
-
+            "directors": "Louis Lumière"
         }
+    },
+    {
+        $count: "passing_scores"
     }
 ])
