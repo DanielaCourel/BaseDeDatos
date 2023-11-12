@@ -2,3 +2,4 @@
 
 use('mflix')
 
+db.comments.findOne()
