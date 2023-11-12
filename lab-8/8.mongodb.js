@@ -2,4 +2,29 @@
 
 use('mflix')
 
-db.comments.findOne()
+db.movies.findOne()
+
+db.movies.aggregate([
+    {
+        $lookup: {
+            from: 'comments',
+            localField: '_id',                  //cuando quise poner "_id.oid" se me trababala computadora
+            foreignField: 'movie_id',
+            as: 'comments'
+        }
+    },
+    {
+        $project: {
+            _id: 0,
+            title: 1,
+            year: 1,
+            numComments: { $size: '$comments' }
+        }
+    },
+    {
+        $sort: { numComments: -1 }
+    },
+    {
+        $limit: 10
+    }
+]).pretty()
