@@ -2,8 +2,6 @@
 
 use('mflix')
 
-db.movies.findOne()
-
 db.movies.aggregate([
     {
         $lookup: {
